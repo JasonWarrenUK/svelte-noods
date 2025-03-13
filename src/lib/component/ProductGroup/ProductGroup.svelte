@@ -31,25 +31,25 @@
     width: 100%;
   }
 
-  .product-group_gallery > :global(*) {
+  .product-group_gallery > :global(div) {
     flex: 1 1 calc(25% - 0.75rem);
     min-width: 250px;
   }
 
   @media (max-width: 1200px) {
-    .product-group_gallery > :global(*) {
+    .product-group_gallery > :global(div) {
       flex: 1 1 calc(33.333% - 0.667rem);
     }
   }
 
   @media (max-width: 900px) {
-    .product-group_gallery > :global(*) {
+    .product-group_gallery > :global(div) {
       flex: 1 1 calc(50% - 0.5rem);
     }
   }
 
   @media (max-width: 600px) {
-    .product-group_gallery > :global(*) {
+    .product-group_gallery > :global(div) {
       flex: 1 1 100%;
     }
   }
