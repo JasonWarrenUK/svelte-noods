@@ -12,7 +12,7 @@
           </button>
           <div class={`absolute right-0 mt-2 w-40 bg-white text-black rounded-md shadow-lg ${isOpen ? '' : 'hidden'}`}>
             {#each categories as category(category)}
-            <a href="/" class="block px-4 py-2 hover:bg-gray-200">{category}</a>
+            <a href="/products/{category}" class="block px-4 py-2 hover:bg-gray-200">{category}</a>
             {/each}
           </div>
     </div>
