@@ -1,7 +1,7 @@
-import { categories } from "$lib/data/products";
+import { categories } from '$lib/data/products'
 
 export function load({ params }) {
-	const category = categories.find((category) => category === params.slug);
+    const current_category = categories.find(category => category.toLowerCase() === params.slug.toLowerCase());
 
-	return { category }
+    return { current_category };
 }
