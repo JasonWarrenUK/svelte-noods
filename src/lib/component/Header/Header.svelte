@@ -1,7 +1,6 @@
 <script>
-    import { mockProductData } from "$lib/data/products";
+    import { categories } from "$lib/data/products";
     let isOpen = false;
-    let categories = new Set(mockProductData.products.map(data => data.category));
 </script>
 
 <nav class="flex items-center justify-between px-6 py-4 bg-gray-800 text-white w-full ">

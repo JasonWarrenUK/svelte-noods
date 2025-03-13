@@ -1,7 +1,9 @@
 import { categories } from '$lib/data/products'
 
 export function load({ params }) {
-    const current_category = categories.find(category => category.toLowerCase() === params.slug.toLowerCase());
+  console.log("server:" + params.slug);
+  const current_category = categories.find(category => category.toLowerCase() === params.slug.toLowerCase());
 
-    return { current_category };
+  if (params.slug) console.log(params.slug);
+  return { current_category };
 }
