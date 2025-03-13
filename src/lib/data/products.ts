@@ -17,6 +17,8 @@ export interface ProductGroup {
   products: Product[];
 }
 
+export const categories = [ "Curry", "Seafood", "Spicy", "Vegan" ] as const;
+
 export const mockProductData: ProductGroup = {
   category: [],
   name: "All Products",
