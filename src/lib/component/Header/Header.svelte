@@ -1,10 +1,12 @@
 <script>
     import { categories } from "$lib/data/products";
+    import BasketCounter from "$lib/component/Basket/BasketCounter.svelte"
     let isOpen = false;
 </script>
 
 <nav class="flex items-center justify-between px-6 py-4 bg-gray-800 text-white w-full ">
     <a href="/" class="text-xl font-bold">Home</a>
+    <BasketCounter />
     <div class="relative">
         <button class="px-4 py-2 bg-gray-700 rounded-md" on:click={() => isOpen = !isOpen}>
             Dropdown <i class="fa fa-caret-down"></i>
