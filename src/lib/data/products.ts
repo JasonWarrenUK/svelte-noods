@@ -1,7 +1,7 @@
 export type Product = {
   id: string;
   name: string;
-  category: string;
+  category: typeof categories[number];
   handle: string;
   price: number;
   availableStock: number;
@@ -16,6 +16,8 @@ export interface ProductGroup {
   description?: string;
   products: Product[];
 }
+
+export const categories = [ "Curry", "Seafood", "Spicy", "Vegan" ] as const;
 
 export const mockProductData: ProductGroup = {
   category: [],

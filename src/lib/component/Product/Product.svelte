@@ -4,16 +4,22 @@
   interface Props {
 		product: Product
 	}
-	let { product }: Props = $props();
 
+	let { product }: Props = $props();
 </script>
 
 <div class="product">
-  <img class="product-image" src={product.images[0]} alt={product.name} />
+  <div class="product-image">
+    <img src={product.images[0]} alt={product.name} />
+  </div>
+  
   <div class="product-info">
     <h3 class="product-name">{product.name}</h3>
+
     <p class="product-description">{product.description.slice(0, 60)}...</p>
+
     <span class="product-price">${product.price}</span>
+
     <a class="product-link" href={`/products/${product.handle}`}>
       <button>View Item</button>
     </a>
@@ -21,38 +27,49 @@
 </div>
 
 <style>
-  .product-card {
-    background: white;
+  .product {
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     overflow: hidden;
+    width: 250px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .product-card:hover {
+  .product:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 
-  .product-card_image {
+  .product-image {
     width: 100%;
+    height: auto;
     aspect-ratio: 1;
+    object-fit: cover;
     overflow: hidden;
   }
 
-  .product-card_image img {
+  .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
 
-  .product-card:hover .product-card_image img {
+  .product:hover .product-image img {
     transform: scale(1.05);
   }
 
-  .product-card_content {
+  .product-info {
     padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .product-price {
+    font-weight: bold;
+    color: #333;
   }
 
   h3 {
@@ -68,34 +85,6 @@
     line-height: 1.5;
     color: #666;
   }
-</style>
-
-<style>
-  .product {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
-    width: 250px;
-  }
-
-  .product-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .product-info {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .product-price {
-    font-weight: bold;
-    color: #333;
-  }
 
   button {
     padding: 0.5rem;
@@ -110,7 +99,3 @@
     background-color: #555;
   }
 </style>
-
-
-
-
